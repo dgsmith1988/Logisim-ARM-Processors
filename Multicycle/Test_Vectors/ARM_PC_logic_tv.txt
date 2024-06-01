@@ -1,0 +1,7 @@
+Rd[4]	RegW	Branch	PCS	
+0000	0		0		0	#All low, and brnch is false
+0000	0		1		1	#Test branch first as the other values don't matter
+0100	1		0		0	#RegW is high but Rd isn't correct, Branch = low
+1111	0		0		0	#RegW is low but Rd is correct, Branch = low
+1111	1		x		1	#RegW is high and Rd is correct, Branch = Don't care
+1111	1		1		1	#All high, unecessary due to DNC from previous test

@@ -1,0 +1,59 @@
+#Test vector table for Table 6.3
+#ALUFlags = NZCV
+
+Cond[4]	ALUFlags[4]	CondEx 
+0000	x0xx		0		#CondEx = Z
+0000	x1xx		1		#CondEx = Z
+0001	x0xx		1		#CondEx = ~Z
+0001	x1xx		0		#CondEx = ~Z
+
+0010	xx0x		0		#CondEx = C
+0010	xx1x		1		#CondEx = C
+0011	xx0x		1		#CondEx = ~C
+0011	xx1x		0		#CondEx = ~C
+
+#These tests don't load into the test vector in Logisim correctly for some reason but they pass if you do it manually
+0100	0xxx		0		#CondEx = N
+0100	1xxx		1		#CondEx = N
+0101	0xxx		1		#CondEx = ~N
+0101	1xxx		0		#CondEx = ~N
+
+0110	xxx0		0		#CondEx = V
+0110	xxx1		1		#CondEx = V
+0111	xxx0		1		#CondEx = ~V
+0111	xxx1		0		#CondEx = ~V
+
+1000	x00x		0		#CondEx = ~ZC
+1000	x01x		1		#CondEx = ~ZC
+1000	x10x		0		#CondEx = ~ZC
+1000	x11x		0		#CondEx = ~ZC
+
+1001	x00x		1		#CondEx = Z + ~C = ~(~ZC)
+1001	x01x		0		#CondEx = Z + ~C
+1001	x10x		1		#CondEx = Z + ~C
+1001	x11x		1		#CondEx = Z + ~C
+
+1010	0xx0		1		#CondEx = N XNOR V
+1010	0xx1		0		#CondEx = N XNOR V
+1010	1xx0		0		#CondEx = N XNOR V
+1010	1xx1		1		#CondEx = N XNOR V
+
+1011	0xx0		0		#CondEx = N XOR V
+1011	0xx1		1		#CondEx = N XOR V
+1011	1xx0		1		#CondEx = N XOR V
+1011	1xx1		0		#CondEx = N XOR V
+
+	   #NZCV
+1100	00x0		1		#CondEx = ~Z(N XNOR V)
+1100	00x1		0		#CondEx = ~Z(N XNOR V)
+1100	10x0		0		#CondEx = ~Z(N XNOR V)
+1100	10x1		1		#CondEx = ~Z(N XNOR V)
+1100	x1xx		0		#CondEx = ~Z(N XNOR V)
+
+1101	00x0		0		#CondEx = Z + (N XOR V) = ~(~Z(N XNOR V))
+1101	00x1		1		#CondEx = Z + (N XOR V)
+1101	10x0		1		#CondEx = Z + (N XOR V)
+1101	10x1		0		#CondEx = Z + (N XOR V)
+1101	x1xx		1		#CondEx = Z + (N XOR V)
+
+1110	xxxx		1		#Always/unconditional execution

@@ -1,0 +1,10 @@
+#Given that this component is meant to be used in a larger context which involves state changes for the inputs to this, oscillations occur in purely combinational testing.
+#Accordingly, the signal values will be correct for certain tests, however Logisim will report an error as occuring due to the detection of the oscillations.
+#Also, as the ARM_Condition_Check unit was verified in isolation in another test vector, this test is just meant to test the logic which surrounds that block in this module.
+
+#ALUFlags/FlagsE/Flags_out = NZCV
+CondE[4]	FlagWriteE[2]	FlagsE[4]	ALUFlags[4]	CondEx	Flags_Out[4]
+0001		00				0000		1111		1		0000
+0001		01				0000		1111		1		0011
+0001		10				0000		1111		1		1100
+0001		11				0000		1111		1		1111

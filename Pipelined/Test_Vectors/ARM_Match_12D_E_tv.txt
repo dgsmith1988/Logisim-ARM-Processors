@@ -1,0 +1,5 @@
+RA1D[4]	RA2D[4]	WA3E[4]	Match_12D_E
+0000	0001	0100	0			#None match
+0100	0001	0100	1			#RA1D matches
+0000	0100	0100	1			#RA2D matches
+1010	1010	1010	1			#Both match

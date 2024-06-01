@@ -1,0 +1,13 @@
+InstrImm[24]	ImmSrc[2]	ExtImm[32]
+0x000000		00			0x00000000	#Extended unsigned 8-bit
+0x0000FF		00			0x000000FF	#Extended unsigned 8-bit
+0xFFFFCC		00			0x000000CC	#Extended unsigned 8-bit, invalid input but HW doesn't care
+0x000000		01			0x00000000	#Extended unsigned 12-bit
+0x000FFF		01			0x00000FFF	#Extended unsigned 12-bit
+0xFFFCCC		01			0x00000CCC	#Extended unsigned 12-bit, invalid input but HW doesn't care
+0x000000		10			0x00000000	#Extended signed 24-bit and multiply by 4, 0 becomes 0
+0xFFFFFF		10			0xFFFFFFFC	#Extended signed 24-bit and multiply by 4, -1 becomes -4
+0x000002		10			0x00000008	#Extended signed 24-bit and multiply by 4, 2 becomes 8
+0xFFFFFE		10			0xFFFFFFF8	#Extended signed 24-bit and multiply by 4, -2 becomes -8
+0x7FFFFF		10			0x01FFFFFC	#Extended signed 24-bit and multiply by 4, largest possible positive input
+0x800000		10			0xFE000000	#Extended signed 24-bit and multiply by 4, most negative possible input

@@ -1,0 +1,6 @@
+RegWriteM	Match_XE_M	RegWriteW	Match_XE_W	FowardXE[2]
+1			1			x			x			10			#if (Match_1E_M • RegWriteM) ForwardAE = 10; // SrcAE = ALUOutM
+0			0			1			1			01			#else if (Match_1E_W • RegWriteW) ForwardAE = 01; // SrcAE = ResultW
+1			0			1			1			01			#else if (Match_1E_W • RegWriteW) ForwardAE = 01; // SrcAE = ResultW
+0			1			1			1			01			#else if (Match_1E_W • RegWriteW) ForwardAE = 01; // SrcAE = ResultW
+0			0			0			0			00			#else ForwardAE = 00; // SrcAE from regfile

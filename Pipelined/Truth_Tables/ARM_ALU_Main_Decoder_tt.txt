@@ -1,0 +1,33 @@
+# Truth table
+# Exported on Fri Feb 23 20:03:21 EST 2024
+
+# Hints and Notes on Formatting:
+# * You can edit this file then import it back into Logisim!
+# * Anything after a '#' is a comment and will be ignored.
+# * Blank lines and separator lines (e.g., ~~~~~~) are ignored.
+# * Keep column names simple (no spaces, punctuation, etc.)
+# * 'Name[N..0]' indicates an N+1 bit variable, whereas
+#   'Name' by itself indicates a 1-bit variable.
+# * You can use 'x' or '-' to indicate "don't care" for both
+#   input and output bits.
+# * You can use binary (e.g., '10100011xxxx') notation or
+#   or hex (e.g., 'C3x'). Logisim will figure out which is which.
+
+Op[1..0] Funct5 Funct0 | Branch MemToReg MemW ALUSrc ImmSrc[1..0] RegW RegSrc[1..0] ALUOp
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   00      0      0    |   0       0      0     0         --       1        00        1  
+   00      0      1    |   0       0      0     0         --       1        00        1  
+   00      1      0    |   0       0      0     1         00       1        -0        1  
+   00      1      1    |   0       0      0     1         00       1        -0        1  
+   01      0      0    |   0       -      1     1         01       0        10        0  
+   01      0      1    |   0       1      0     1         01       1        -0        0  
+   01      1      0    |   0       -      1     1         01       0        10        0  
+   01      1      1    |   0       1      0     1         01       1        -0        0  
+   10      0      0    |   1       0      0     1         10       0        -1        0  
+   10      0      1    |   1       0      0     1         10       0        -1        0  
+   10      1      0    |   1       0      0     1         10       0        -1        0  
+   10      1      1    |   1       0      0     1         10       0        -1        0  
+   11      0      0    |   -       -      -     -         --       -        --        -  
+   11      0      1    |   -       -      -     -         --       -        --        -  
+   11      1      0    |   -       -      -     -         --       -        --        -  
+   11      1      1    |   -       -      -     -         --       -        --        -  

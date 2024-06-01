@@ -1,0 +1,7 @@
+				Rn	 Rd      Src2
+1110 01 000001 0001 0000 000000011000 = 0xE4110018 	;LDR R0 , [R1, #0x18] : R0 <= data at memory address (R1+6*4) = 1
+1110 01 000001 0100 1101 000000011100 = 0xE414D01C 	;LDR R13, [R4, #0x28] : R13 <= data at memory address (R4+7*4) = 8
+1110 01 000000 0100 1101 000000100000 = 0xE404D020 	;STR R13, [R4, #0x32] : memory address (R4+8*4) <= R13 = 8 
+1110 00 001000 0000 0011 000000001101 = 0xE080300D 	;ADD R3, R0, R13   : R3 <= R0 + R13 = 1 + 8 = 9
+1110 10 10 111111111111111111111010   = 0xEAFFFFFA	;B -6  			   : PC should be set to 0, -6 is used as the offset as the immediate is added to PC+8
+
